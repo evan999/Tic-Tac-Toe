@@ -17,14 +17,25 @@ int main(void)
 int print_chars(void)
 {
     char empty_cells[9];
-    char move;
-
-    do
+    char chars["X", "O"];
+    //char move;
+    for (int row = 0; row < num_rows; row++)
     {
-        printf("Your move: Enter O or X", move);
-        empty_spaces--;
+        for (int col = 0; col < num_cols; col++)
+        {
+            if (empty_cells[row][col] == ' ')
+            {
+                printf("X");
+            }
+        }
     }
-    while (move != "X" && move != "O" || empty_cells < 1);
+
+    // do
+    // {
+    //     printf("Your move: Enter O or X", move);
+    //     empty_spaces--;
+    // }
+    // while (move != "X" && move != "O" || empty_cells < 1);
 
 
 
