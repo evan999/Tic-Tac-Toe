@@ -6,56 +6,29 @@
 
 int draw_board(void);
 
-int print_chars(void);
+// int print_chars(void);
+
+int import_board(char* string[]);
+
+bool is_valid_move(char move);
+
+//int import_board
 
 int main(void)
 {
     int board = draw_board();
     printf("%c", board);
-    printf("%c", print_chars);
+
+    return 0;
+    //printf("%c", print_chars);
 }
-
-int print_chars(void)
-{
-    // char chars["X", "O"];
-    printf("X");
-    printf("O");
-    // char empty_cells[9];
-    // char chars["X", "O"];
-    // //char move;
-    // for (int row = 0; row < num_rows; row++)
-    // {
-    //     for (int col = 0; col < num_cols; col++)
-    //     {
-    //         if (empty_cells[row][col] == ' ' || (int) empty_cells[row][col] == 32)
-    //         {
-    //             printf("X");
-    //         }
-    //     }
-    // }
-}
-
-    // do
-    // {
-    //     printf("Your move: Enter O or X", move);
-    //     empty_spaces--;
-    // }
-    // while (move != "X" && move != "O" || empty_cells < 1);
-
-
-
-
-    // Check for empty spaces
-    // Char array for empty spaces
-
-    // while(empty_spaces )
-
-
 
 int draw_board(void)
 {
     int num_rows = 4;
     int num_cols = 4;
+
+    //char state[3] = {" ", "X", "O"};
 
     for (int row = 0; row <= num_rows; row++)
     {
@@ -64,7 +37,7 @@ int draw_board(void)
 
             if (col % 2 == 0 && row % 2 == 0)
             {
-                printf(" ");
+                printf("X");
             }
 
             if (col % 2 != 0 && row % 2 == 0)
@@ -88,9 +61,32 @@ int draw_board(void)
     return 0;
 }
 
-// int isValid(char* input)
-// {
+int import_board(char* string[])
+{
+    char board[9]; // array board cells
+    char state[3] = {" ", "X", "O"}; // possible board cell states
 
-// }
+    // Need a way to store the game data and board state
 
-// Next Challenge: Implement this board using an array or multi-dimensional array.
+    for (int cell = 0; cell < sizeof board; cell++)
+    {
+        if (board[cell] == " ")
+        {
+            board[cell] = "X";
+        }
+    }
+
+    // for(int row = 0; row < 3; row++)
+    // {
+    //     for (int col = 0; col < 3; col++)
+    //     {
+
+    //     }
+    // }
+
+}
+
+bool is_valid_move(char move)
+{
+
+}
