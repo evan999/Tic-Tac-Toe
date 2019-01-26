@@ -12,23 +12,28 @@ int main(void)
 {
     int board = draw_board();
     printf("%c", board);
+    printf("%c", print_chars);
 }
 
 int print_chars(void)
 {
-    char empty_cells[9];
-    char chars["X", "O"];
-    //char move;
-    for (int row = 0; row < num_rows; row++)
-    {
-        for (int col = 0; col < num_cols; col++)
-        {
-            if (empty_cells[row][col] == ' ')
-            {
-                printf("X");
-            }
-        }
-    }
+    // char chars["X", "O"];
+    printf("X");
+    printf("O");
+    // char empty_cells[9];
+    // char chars["X", "O"];
+    // //char move;
+    // for (int row = 0; row < num_rows; row++)
+    // {
+    //     for (int col = 0; col < num_cols; col++)
+    //     {
+    //         if (empty_cells[row][col] == ' ' || (int) empty_cells[row][col] == 32)
+    //         {
+    //             printf("X");
+    //         }
+    //     }
+    // }
+}
 
     // do
     // {
@@ -45,7 +50,7 @@ int print_chars(void)
 
     // while(empty_spaces )
 
-}
+
 
 int draw_board(void)
 {
@@ -82,5 +87,10 @@ int draw_board(void)
     }
     return 0;
 }
+
+// int isValid(char* input)
+// {
+
+// }
 
 // Next Challenge: Implement this board using an array or multi-dimensional array.
