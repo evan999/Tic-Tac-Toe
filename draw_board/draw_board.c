@@ -8,7 +8,7 @@ int draw_board(void);
 
 // int print_chars(void);
 
-int import_board(char* string[]);
+int import_board(char* board_data[]);
 
 bool is_valid_move(char move);
 
@@ -16,8 +16,11 @@ bool is_valid_move(char move);
 
 int main(void)
 {
-    int board = draw_board();
-    printf("%c", board);
+    // int board = draw_board();
+    // printf("%c", board);
+
+    int board_state = import_board("XXOXOOXO");
+
 
     return 0;
     //printf("%c", print_chars);
@@ -61,32 +64,26 @@ int draw_board(void)
     return 0;
 }
 
-int import_board(char* string[])
+// Load game state from file
+
+char* import_board(char* board_data[])
 {
     char board[9]; // array board cells
-    char state[3] = {" ", "X", "O"}; // possible board cell states
+    // char state[3] = {" ", "X", "O"}; // possible board cell states
 
-    // Need a way to store the game data and board state
+    // Copy chars in board_data array to board array
 
-    for (int cell = 0; cell < sizeof board; cell++)
+    for (int cell = 0; cell < strlen(board_data); cell++)
     {
-        if (board[cell] == " ")
-        {
-            board[cell] = "X";
-        }
+        board[cell] = board_data[cell];
+        printf("%c", board[cell]);
     }
 
-    // for(int row = 0; row < 3; row++)
-    // {
-    //     for (int col = 0; col < 3; col++)
-    //     {
-
-    //     }
-    // }
-
+    return board;
 }
 
 bool is_valid_move(char move)
 {
 
 }
+
