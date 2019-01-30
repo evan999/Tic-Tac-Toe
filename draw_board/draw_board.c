@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <cs50.h>
-
+#include <ctype.h>
 
 int draw_board(void);
 
@@ -59,7 +59,6 @@ int draw_board(void)
             }
         }
         printf("\n");
-        //printf("\n");
     }
     return 0;
 }
@@ -84,6 +83,31 @@ char* import_board(char* board_data[])
 
 bool is_valid_move(char move)
 {
-
+    // If valid move
+    if (isupper(move) == 'x' || isupper(move) == 'o' && move != NULL)
+    {
+        return true;
+    }
+    else
+    {
+        // Invalid move
+        return false;
+    }
 }
 
+// is_valid_move with a string return value
+
+// char* is_valid_move(char move)
+// {
+//     char* message= "";
+//     if (isupper(move) == 'x' || isupper(move) == 'o' && move != NULL)
+//     {
+//         message = "Valid move.";
+//     }
+//     else
+//     {
+//         // Invalid move
+//         message = "Invalid move.";
+//     }
+//     return message;
+// }
