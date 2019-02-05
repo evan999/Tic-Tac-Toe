@@ -8,9 +8,15 @@ int draw_board(void);
 
 // int print_chars(void);
 
-int import_board(char* board_data[]);
+//int import_board(char *board_data[]);
 
 bool is_valid_move(char move);
+
+// bool is_game_over(char board);
+
+// bool did_win();
+
+// char* did_win(char *message);
 
 //int import_board
 
@@ -19,9 +25,7 @@ int main(void)
     // int board = draw_board();
     // printf("%c", board);
 
-    int board_state = import_board("XXOXOOXO");
-
-
+    //int board_state = import_board("XXOXOOXO");
     return 0;
     //printf("%c", print_chars);
 }
@@ -65,26 +69,25 @@ int draw_board(void)
 
 // Load game state from file
 
-char* import_board(char* board_data[])
+char* import_board(char board_data[], char board[])
 {
-    char board[9]; // array board cells
+    //board[9]; // array board cells
     // char state[3] = {" ", "X", "O"}; // possible board cell states
 
     // Copy chars in board_data array to board array
 
-    for (int cell = 0; cell < strlen(board_data); cell++)
+    for (int cell = 0; cell < 9; cell++)
     {
         board[cell] = board_data[cell];
-        printf("%c", board[cell]);
+        //printf("%c", board[cell]);
     }
-
     return board;
 }
 
 bool is_valid_move(char move)
 {
     // If valid move
-    if (isupper(move) == 'x' || isupper(move) == 'o' && move != NULL)
+    if (isupper(move) == 'x' || isupper(move) == 'o')
     {
         return true;
     }
@@ -95,19 +98,21 @@ bool is_valid_move(char move)
     }
 }
 
-// is_valid_move with a string return value
-
-// char* is_valid_move(char move)
+// bool is_game_over(char board)
 // {
-//     char* message= "";
-//     if (isupper(move) == 'x' || isupper(move) == 'o' && move != NULL)
+//     // If board is full
+//     if()
 //     {
-//         message = "Valid move.";
+//         return true;
 //     }
 //     else
 //     {
-//         // Invalid move
-//         message = "Invalid move.";
+//         // board is not full, so game is not yet over!
+//         return false;
 //     }
-//     return message;
+// }
+
+// char* did_win(char *message)
+// {
+
 // }
