@@ -8,11 +8,11 @@ int draw_board(void);
 
 // int print_chars(void);
 
-//int import_board(char *board_data[]);
+char* import_board(char board_data[], char board[]);
 
 bool is_valid_move(char move);
 
-// bool is_game_over(char board);
+bool is_game_over(char board[]);
 
 // bool did_win();
 
@@ -22,8 +22,10 @@ bool is_valid_move(char move);
 
 int main(void)
 {
+    char board[9];
     // int board = draw_board();
     // printf("%c", board);
+    // int board_drawing = draw_board();
 
     //int board_state = import_board("XXOXOOXO");
     return 0;
@@ -98,19 +100,21 @@ bool is_valid_move(char move)
     }
 }
 
-// bool is_game_over(char board)
-// {
-//     // If board is full
-//     if()
-//     {
-//         return true;
-//     }
-//     else
-//     {
-//         // board is not full, so game is not yet over!
-//         return false;
-//     }
-// }
+bool is_game_over(char board[])
+{
+    for (int cell = 0; cell < 9; cell++)
+    {
+        if(board[cell] == " ")
+        {
+            return false;
+            break;
+        }
+        else
+        {
+            return true;
+        }
+    }
+}
 
 // char* did_win(char *message)
 // {
